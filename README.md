@@ -1,4 +1,4 @@
 ### 🐙 GitFlick
 
 
-🔗 [Try GitFlick](fac29a.github.io/GitFlick/)
+🔗 [Try GitFlick](https://fac29a.github.io/GitFlick/)
