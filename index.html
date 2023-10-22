@@ -15,18 +15,20 @@
     <!-- Input field for GitHub username -->
     <div id="search-user">
         <label for="username">Enter GitHub Username:</label>
-        <input type="text" id="username" name="username">
+        <input type="text" id="username" name="username" class="search-btn">
         <button id="flickBtn" onclick="fetchRepos()">Flick</button>
     </div>
     <!-- Display the latest repositories -->
-    <div id="repoContainer"></div>
-
-    <!-- Display charts -->
-    <div class="charts">
-        <p><img id="top-langs" alt="Top Languages chart" style="display: none;" /></p>
-        <p><img id="user-stats" alt="User Stats chart" style="display: none;" /></p>
-        <p><img id="streak-stats" alt="Streak Stats chart" style="display: none;" /></p>
-        <p><img id="contribution-graph" alt="Contribution chart" style="display: none;" /></p>
+    <div class="info">
+        <div id="repoContainer"></div>
+    
+        <!-- Display charts -->
+        <div class="charts">
+            <p><img id="top-langs" alt="Top Languages chart" style="display: none;" /></p>
+            <p><img id="user-stats" alt="User Stats chart" style="display: none;" /></p>
+            <p><img id="streak-stats" alt="Streak Stats chart" style="display: none;" /></p>
+            <p><img id="contribution-graph" alt="Contribution chart" style="display: none;" /></p>
+        </div>
     </div>
 
     <script src="script.js"></script>

@@ -26,18 +26,16 @@ async function fetchRepos() {
       0
     );
 
-    repoContainer.innerHTML = `<div id="profile-background">
+    repoContainer.innerHTML = `<div id="profile-background"></div>
                                 <div id="profile-container">
                                     <img src="${profile.avatar_url}" class="profile-pic" alt="${username}'s Profile Picture">
                                     <h2>${profile.name}</h2>
                                     <span class="username">${profile.login}</span>
                                     <p>${profile.bio}</p>
                                 </div>
-                                    <button onclick="window.open('${profile.html_url}', '_blank')">Follow</button>
-                              </div>
-                    
-                        <p>Repos: ${profile.public_repos} Followers: ${profile.followers} Following: ${profile.following}</p>
-                        <p>⭐: ${totalStars}</p>
+                                <button onclick="window.open('${profile.html_url}', '_blank')">Follow</button>
+                                <p>Repos: ${profile.public_repos} Followers: ${profile.followers} Following: ${profile.following}</p>
+                                <p>⭐: ${totalStars}</p>
                     
                     `;
 

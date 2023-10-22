@@ -2,39 +2,87 @@
 /* root?.. color variables? */
 /* media query / responsiveness ?? */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
+*{
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #1E1D2F;
+    --primary: #2D2B43;
+    --secondary: #1F1A36;
+    --accent: ;
+}
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
-    margin-top: 50px;
+    background-color: var(--background);
+    position: relative;
+    width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
 #search-user {
     display: block;
     padding: 20px;
-    background-color: black;
-    color: green;
+    background-color: var(--primary);
+    color: white;
+    position: sticky;
+    margin-bottom: 10px;
+    top: 0;
+    width: 100vw;
+}
+
+#username {
+    border-radius: 5px;
+    border-style: none;
+    height: 20px;
 }
 
 #flickBtn:hover {
     background-color: #ccc;
 }
 
+.info {
+    width: 600px;
+    height: max-content;
+    background-color: var(--primary);
+    color: white;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#repoContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 #profile-background {
     background-size: cover;
     background-position: center;
     padding: 20px;
+    width: 100%;
+    height: 150px;
 }
 
 #profile-container {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: black;
-    padding: 20px;
-    border-radius: 5%;
-    max-width: 350px;
-    margin: 0 auto;
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
 }
 
 .profile-pic {
@@ -47,4 +95,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+}
+
+.charts > * > * {
+    width: 100%;
 }
