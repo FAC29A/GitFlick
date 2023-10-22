@@ -34,8 +34,12 @@ async function fetchRepos() {
                                     <p>${profile.bio}</p>
                                 </div>
                                 <button onclick="window.open('${profile.html_url}', '_blank')">Follow</button>
-                                <p>Repos: ${profile.public_repos} Followers: ${profile.followers} Following: ${profile.following}</p>
-                                <p>⭐: ${totalStars}</p>
+                                <div class="social-container">
+                                  <p>Repos: ${profile.public_repos}</p>
+                                  <p>Followers: ${profile.followers}</p>
+                                  <p>Following: ${profile.following}</p>
+                                  <p>⭐: ${totalStars}</p>
+                                </div>
                     
                     `;
 
