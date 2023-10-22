@@ -68,7 +68,7 @@ button{
 }
 
 .info {
-    width: 600px;
+    width: 50%;
     height: max-content;
     background-color: var(--primary);
     color: white;
