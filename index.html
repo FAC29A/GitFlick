@@ -7,30 +7,81 @@
     <title>GitFlick</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="media/favicon.png">
 
 </head>
 
 <body>
-
     <!-- Input field for GitHub username -->
-    <div id="search-user">
+    <header id="search-user">
         <label for="username">Enter GitHub Username:</label>
         <input type="text" id="username" name="username" class="search-btn">
         <button id="flickBtn" onclick="fetchRepos()">Flick</button>
-    </div>
-    <!-- Display the latest repositories -->
-    <div class="info">
-        <div id="repoContainer"></div>
-    
-        <!-- Display charts -->
-        <div class="charts">
-            <p><img id="top-langs" alt="Top Languages chart" style="display: none;" /></p>
-            <p><img id="user-stats" alt="User Stats chart" style="display: none;" /></p>
-            <p><img id="streak-stats" alt="Streak Stats chart" style="display: none;" /></p>
-            <p><img id="contribution-graph" alt="Contribution chart" style="display: none;" /></p>
-        </div>
-    </div>
+    </header>
 
+    <main>
+        <!-- Display the latest repositories -->
+        <div class="info">
+            <!-- Display the latest repositories -->
+            <div id="repoContainer" role="list" aria-label="Repository display section"></div>
+            <select id="languageFilter">
+                <option value="" disabled selected>Filter by Language</option>
+                <!-- Additional options are added dynamically -->
+            </select>
+
+            <select id="sortOrder">
+                <option value="" disabled selected>Sort by</option>
+                <option value="name">Name</option>
+                <option value="updated_at">Last Updated</option>
+            </select>
+
+            <div class="repo-list"></div>
+
+
+
+            <!-- Display charts -->
+            <div class="charts" role="region" aria-label="Charts display section">
+                <p><img id="top-langs" alt="Top Languages chart" style="display: none;" /></p>
+                <p><img id="user-stats" alt="User Stats chart" style="display: none;" /></p>
+                <p><img id="streak-stats" alt="Streak Stats chart" style="display: none;" /></p>
+                <div class="chart-container">
+                    <span id="chart-label" class="chart-label"
+                        style="display: none; color:#2f80ec; font-weight:bolder; font-size:1.2rem ">Contribution chart
+                        in
+                        the last year</span>
+                    <img id="contribution-graph" alt="Contribution chart"
+                        style="display: none; background-color: white " />
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer role="contentinfo">
+        <div class="giphy" aria-label="Giphy search section">
+            <h2><span style="color: green;">Bonus:</span> Wanna GIF out loud? Go on!😁</h2>
+            <div class="gifSearch">
+
+                <input type="text" id="search-term" placeholder="Type anything" onkeydown="checkEnter(event)"
+                    aria-label="Giphy search input field">
+                <button id="searchBtn" onclick="searchGif()"
+                    aria-label="Search button to fetch Giphy images">Search</button>
+            </div>
+
+            <div id="giphyModal" class="modal" aria-hidden="true" aria-labelledby="modal-content">
+                <div class="modal-content" id="modal-content">
+                    <span class="close" aria-label="Close modal window button">&times;</span>
+                    <div id="giphy-container">
+                        <!-- GIFs will be appended here -->
+                    </div>
+                    <button id="prevBtn" onclick="navigateGif(-1)">Previous</button>
+                    <button id="nextBtn" onclick="navigateGif(1)">Next</button>
+                </div>
+            </div>
+
+        </div>
+
+        <p id="creators">Created by Daniel & Paing</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 
