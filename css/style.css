@@ -46,7 +46,7 @@ main {
     color: white;
     position: sticky;
     margin-bottom: 10px;
-    top: 0;
+    top: -0.5%;
     width: 100vw;
     z-index: 1000;
 }
@@ -201,8 +201,7 @@ main {
 }
 
 .repo-box {
-    width: 90%;
-    max-width: 600px;
+    width: 95%;
     margin: 20px auto;
     border: 1px solid black;
     background-color: white;
@@ -392,4 +391,19 @@ footer {
 #prevBtn,
 #nextBtn {
     margin: 10px;
+}
+
+/* Responsiveness */
+
+@media only screen and (max-width: 900px) {
+    .info{
+        width: 96%;
+    }
+    #top-langs,
+    #user-stats,
+    #streak-stats,
+    #contribution-graph {
+        width: 96%;
+        min-width: 96%;
+}
 }
