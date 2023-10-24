@@ -1,4 +1,4 @@
-// Quote API variables
+
 
 document
   .getElementById("username")
@@ -35,6 +35,9 @@ async function fetchRepos() {
       (sum, repo) => sum + repo.stargazers_count,
       0
     );
+    
+    document.getElementById("charts").style.display = "block"
+    document.getElementById("quotes").style.display = "none"
 
     repoContainer.innerHTML = `<div id="profile-background"></div>
                                 <img src="${profile.avatar_url}" class="profile-pic" alt="${username}'s Profile Picture">
@@ -259,3 +262,47 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+async function generateQuote() {
+  const category = 'success';
+  const apiUrl = 'https://api.api-ninjas.com/v1/quotes?category=' + category;
+  const apiKey = 'kYo51+WlNXECn/ELlkpIBA==LNDvdkxjMZGVmppP';
+
+  const headers = {
+    'X-Api-Key': apiKey,
+    'Content-Type': 'application/json',
+  };
+
+  const authorDiv = document.getElementById('author');
+  const quoteDiv = document.getElementById('quote');
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'GET',
+      headers: headers,
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const result = await response.json();
+
+    if (result.length > 0) {
+      quoteDiv.innerHTML = `"${result[0].quote}"`;
+      authorDiv.innerHTML = `- ${result[0].author}`;
+    } else {
+      console.error('No quotes found in the API response.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+generateQuote();
+
+
+
+
+
+
