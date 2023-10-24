@@ -1,3 +1,5 @@
+// Quote API variables
+
 document
   .getElementById("username")
   .addEventListener("keydown", function (event) {
@@ -35,8 +37,8 @@ async function fetchRepos() {
     );
 
     repoContainer.innerHTML = `<div id="profile-background"></div>
+                                <img src="${profile.avatar_url}" class="profile-pic" alt="${username}'s Profile Picture">
                                 <div id="profile-container">
-                                    <img src="${profile.avatar_url}" class="profile-pic" alt="${username}'s Profile Picture">
                                     <h2>${profile.name}</h2>
                                     <span class="username">${profile.login}</span>
                                     <p>${profile.bio}</p>
@@ -48,15 +50,12 @@ async function fetchRepos() {
                                   <p>Following: ${profile.following}</p>
                                   <p>⭐: ${totalStars}</p>
                                 </div>
+                                <div class="repo-box">
+                                    <div class="repo-header">Recent Repos</div>
+                                    <div class="repo-list">
+                                    </div>
+                                </div> `;
 
-
-     <div class="repo-box">
-        <div class="repo-header">Recent Repos</div>
-        <div class="repo-list">
-        </div>
-    </div>
-                    
-                    `;
     // Extract unique languages from the repos; filter out null/undefined languages
     const uniqueLanguages = [
       ...new Set(repos.map((repo) => repo.language).filter(Boolean)),
