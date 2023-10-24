@@ -431,6 +431,16 @@ footer {
     transition: all 0.3s ease-in-out;
 }
 
+.quote-container {
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+}
+
+#author{
+    font-style: italic;
+}
+
 /* Responsiveness */
 @media only screen and (max-width: 600px) {
 
