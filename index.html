@@ -58,7 +58,7 @@
     </main>
     <footer role="contentinfo">
         <div class="giphy" aria-label="Giphy search section">
-            <h2><span style="color: green;">Bonus:</span> Wanna GIF out loud? Go on!😁</h2>
+            <p><span style="color: green;">Bonus:</span> Wanna GIF out loud? Go on!😁</p>
             <div class="gifSearch">
 
                 <input type="text" id="search-term" placeholder="Type anything" onkeydown="checkEnter(event)"
@@ -73,8 +73,10 @@
                     <div id="giphy-container">
                         <!-- GIFs will be appended here -->
                     </div>
-                    <button id="prevBtn" onclick="navigateGif(-1)">Previous</button>
-                    <button id="nextBtn" onclick="navigateGif(1)">Next</button>
+                    <div class="nav-buttons"> <!-- New container for the buttons -->
+                        <button id="prevBtn" onclick="navigateGif(-1)">Previous</button>
+                        <button id="nextBtn" onclick="navigateGif(1)">Next</button>
+                    </div>
                 </div>
             </div>
 
