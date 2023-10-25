@@ -47,29 +47,18 @@ main {
     top: -0.5%;
     width: 100vw;
     z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-
-}
-
-.logo-container {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-}
-
-#logo {
-    height: 50px;
-    cursor: pointer;
 }
 
 #username {
     border-radius: 5px;
     border-style: none;
-    height: 20px;
+    height: 25px;
+}
+
+#logo {
+    height: 50px;
+    cursor: pointer;
+    vertical-align: middle;
 }
 
 
@@ -465,13 +454,6 @@ footer {
 /* Responsiveness */
 @media only screen and (max-width: 600px) {
 
-    #search-user {
-        flex-direction: column;
-    }
-
-    #username {
-        height: 30px;
-    }
 
     .gifSearch #search-term,
     .gifSearch #searchBtn {
