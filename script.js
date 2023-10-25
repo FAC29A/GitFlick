@@ -1,10 +1,9 @@
-
-
 document
   .getElementById("username")
   .addEventListener("keydown", function (event) {
-    if (event.keyCode === 13) fetchRepos();
+    if (event.key === "Enter") fetchRepos();
   });
+
 
 async function fetchRepos() {
   const username = document.getElementById("username").value;
