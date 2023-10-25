@@ -14,10 +14,14 @@
 <body>
     <!-- Input field for GitHub username -->
     <header id="search-user">
+        <div class="logo-container">
+            <img id="logo" src="media/favicon.png" alt="Site Logo" onclick="window.location.reload()">
+        </div>
         <label for="username">Enter GitHub Username:</label>
         <input type="text" id="username" name="username" class="search-btn">
         <button id="flickBtn" onclick="fetchRepos()">Flick</button>
     </header>
+
 
     <main style="display: flex; justify-content: center; align-items: center;">
         <!-- Display the latest repositories -->
@@ -49,13 +53,13 @@
                 <p><img id="top-langs" alt="Top Languages chart" style="display: none;" /></p>
                 <p><img id="user-stats" alt="User Stats chart" style="display: none;" /></p>
                 <p><img id="streak-stats" alt="Streak Stats chart" style="display: none;" /></p>
-                <div class="chart-container">
+                <div class="chart-container" style="overflow-x: auto;">
                     <span id="chart-label" class="chart-label"
                         style="display: none; color:#2f80ec; font-weight:bolder; font-size:1.2rem ">Contribution chart
                         in
                         the last year</span>
                     <img id="contribution-graph" alt="Contribution chart"
-                        style="display: none; background-color: white " />
+                        style="display: none; background-color: white; padding: 10px;" />
                 </div>
             </div>
         </div>
